@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class AuthController extends Controller
 {
@@ -44,10 +45,12 @@ class AuthController extends Controller
         // );
 
         if (Auth::attempt($request->only('username', 'password'))) {
+            Alert::toast('Login Successful', 'success')->position('top-end')->autoClose(3000);
             return redirect()->route('dashboard.index');
+        } else {
+            Alert::toast('Login Failed', 'error')->position('top-end')->autoClose(3000);
+            return redirect()->route('login');
         }
-
-        return redirect()->route('login');
     }
 
     /**

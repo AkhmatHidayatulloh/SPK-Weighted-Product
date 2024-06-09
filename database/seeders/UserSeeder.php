@@ -48,5 +48,18 @@ class UserSeeder extends Seeder
             'created_at' => Carbon::now(),
             'updated_at' => Carbon::now(),
         ]);
+
+        for ($i = 1; $i < 6; $i++) {
+            DB::table('users')->insert([
+                'username' => 'dummy' . $i . '',
+                'email' => 'dummy' . $i . '@gmail.com',
+                'password' => bcrypt('dummy' . $i . ''),
+                'role' => 'user',
+                'status' => '1',
+                'session' => '',
+                'created_at' => Carbon::now(),
+                'updated_at' => Carbon::now(),
+            ]);
+        }
     }
 }

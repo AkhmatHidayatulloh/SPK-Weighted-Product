@@ -23,6 +23,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        // Set the default timezone for Carbon
+        \Carbon\Carbon::setToStringFormat('d/m/Y H:i:s'); // Optional format
+        \Carbon\Carbon::setLocale('id');
     }
 }

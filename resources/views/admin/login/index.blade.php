@@ -14,9 +14,48 @@
     <link rel="stylesheet" href="{{ asset('admin/plugins/icheck-bootstrap/icheck-bootstrap.min.css')}}">
     <!-- Theme style -->
     <link rel="stylesheet" href="{{ asset('admin/dist/css/adminlte.min.css')}}">
+    <!-- Custom styles -->
+    <style>
+        .login-box {
+            margin: 0 auto;
+            max-width: 400px;
+            margin-top: 100px;
+            /* Adjust as needed */
+        }
+
+        .login-card-body {
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-logo {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+        .mb-1 a {
+            color: #007bff;
+        }
+
+        .mb-1 a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 
 <body class="hold-transition login-page">
+    @include('sweetalert::alert')
     <div class="login-box">
         <div class="login-logo">
             <a href="#"><b>Aplikasi Cashflow </b></a>
@@ -30,7 +69,7 @@
                 <form action="{{ route('auth.store') }}" method="post">
                     @csrf
                     <div class="input-group mb-3">
-                        <input type="test" name="username" id="username" class="form-control" placeholder="Username" required>
+                        <input type="text" name="username" id="username" class="form-control" placeholder="Username" required>
                         <div class="input-group-append">
                             <div class="input-group-text">
                                 <span class="fas fa-user"></span>

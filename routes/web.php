@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\AuthController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,18 +23,20 @@ Route::group([
     'namespace' => 'App\Http\Controllers\Admin',
     'middleware' => ['auth', 'CekRole:super,admin,user']
 ], function () {
-    // Route Log Data User
+    // Route
     Route::resource('dashboard', 'DashboardController');
+
+    Route::resource('user', 'UserController');
+    Route::resource('vendor', 'VendorController');
+    Route::resource('category', 'CategoryController');
 });
 
 
-Route::group([
-    'prefix' => 'admin',
-    'namespace' => 'App\Http\Controllers\Auth',
-], function () {
-    // Route Log Data User
-    Route::resource('auth', 'AuthController')->names([
-        'index' => 'login',
-    ]);
-    Route::get('/logout', 'AuthController@logout')->name('logout');
+Route::resource('auth', AuthController::class)->names([
+    'index' => 'login',
+]);
+Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+
+Route::fallback(function () {
+    return redirect()->route('dashboard.index');
 });
