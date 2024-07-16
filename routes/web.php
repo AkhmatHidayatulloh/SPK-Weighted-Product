@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\AuthController;
+use App\Models\soal;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,6 +30,10 @@ Route::group([
     Route::resource('user', 'UserController');
     Route::resource('vendor', 'VendorController');
     Route::resource('category', 'CategoryController');
+    Route::resource('soal', 'SoalController');
+    Route::resource('jawaban', 'JawabanController');
+    Route::resource('quisioner', 'QuisionerController');
+    Route::resource('perhitungan', 'HitungSpkController');
 });
 
 

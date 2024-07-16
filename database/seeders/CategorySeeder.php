@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
+use Carbon\Carbon;
 use App\Models\Category;
-use Faker\Factory as Faker;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class CategorySeeder extends Seeder
 {
@@ -16,16 +17,59 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $faker = Faker::create();
-        // Create dummy categories
-        for ($i = 0; $i < 10; $i++) {
-            Category::create([
-                'name' => $faker->word,
-                'description' => $faker->sentence,
-                'bobot' => $faker->randomFloat(2, 0, 100),
-                'created_by' => 'Seeder',
-                'modified_by' => null,
-            ]);
-        }
+        DB::table('categorys')->insert([
+            'name' => 'General Information',
+            'description' => 'Ini Deskripsi',
+            'bobot' => 3,
+            'benefit'=> 1,
+            'created_by' => 'Seeder',
+            'modified_by' => null,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('categorys')->insert([
+            'name' => 'Price',
+            'description' => 'Ini Deskripsi',
+            'bobot' => 5,
+            'benefit'=> '0',
+            'created_by' => 'Seeder',
+            'modified_by' => null,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('categorys')->insert([
+            'name' => 'Quality Control',
+            'description' => 'Ini Deskripsi',
+            'bobot' => 5,
+            'benefit'=> 1,
+            'created_by' => 'Seeder',
+            'modified_by' => null,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('categorys')->insert([
+            'name' => 'Transaction',
+            'description' => 'Ini Deskripsi',
+            'bobot' => 4,
+            'benefit'=> 1,
+            'created_by' => 'Seeder',
+            'modified_by' => null,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
+
+        DB::table('categorys')->insert([
+            'name' => 'Payment',
+            'description' => 'Ini Deskripsi',
+            'bobot' => 3,
+            'benefit'=> 1,
+            'created_by' => 'Seeder',
+            'modified_by' => null,
+            'created_at' => Carbon::now(),
+            'updated_at' => Carbon::now(),
+        ]);
     }
 }

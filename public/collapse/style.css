@@ -1,0 +1,5 @@
+@import url("http://bootswatch.com/simplex/bootstrap.min.css");
+
+table .collapse.in {
+	display:table-row;
+}

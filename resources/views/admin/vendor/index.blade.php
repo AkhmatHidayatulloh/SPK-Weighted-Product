@@ -60,6 +60,7 @@
                                     <th>Alamat</th>
                                     <th>Kontak</th>
                                     <th>Status</th>
+                                    <th>Hitung SPK</th>
                                     <th>Action</th>
                                     <th>Last Updated</th>
                                 </tr>
@@ -77,6 +78,9 @@
                                         @else
                                         <span class="badge bg-danger">Inactive</span>
                                         @endif
+                                    </td>
+                                    <td>
+                                        <a href="{{ route('quisioner.index',[ 'id' =>  $vendor->id]) }}" class="btn btn-sm btn-primary">Hitung</a>
                                     </td>
                                     <td>
                                         <a href="{{ route('vendor.edit', $vendor->id) }}" class="btn btn-sm btn-primary">Edit</a>

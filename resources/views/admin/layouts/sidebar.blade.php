@@ -29,9 +29,9 @@
                 <li class="nav-header">ADMIN</li>
                 <!-- Data Master menu -->
                 <li
-                    class="nav-item {{ Request::is('admin/user') ? 'menu-open' : '' }} {{ Request::is('admin/category') ? 'menu-open' : '' }} {{ Request::is('admin/vendor') ? 'menu-open' : '' }}">
+                    class="nav-item {{ Request::is('admin/user') ? 'menu-open' : '' }} {{ Request::is('admin/category') ? 'menu-open' : '' }} {{ Request::is('admin/vendor') ? 'menu-open' : '' }} {{ Request::is('admin/soal') ? 'menu-open' : '' }}">
                     <a href="#"
-                        class="nav-link {{ Request::is('admin/user') ? 'active' : '' }} {{ Request::is('admin/category') ? 'active' : '' }} {{ Request::is('admin/vendor') ? 'active' : '' }}">
+                        class="nav-link {{ Request::is('admin/user') ? 'active' : '' }} {{ Request::is('admin/category') ? 'active' : '' }} {{ Request::is('admin/vendor') ? 'active' : '' }} {{ Request::is('admin/soal') ? 'active' : '' }}">
                         <i class="nav-icon fas fa-database"></i>
                         <p>
                             Data Master
@@ -58,6 +58,13 @@
                                 class="nav-link {{ Request::is('admin/category') ? 'active' : '' }}">
                                 <i class="fas fa-list nav-icon"></i>
                                 <p>Master Kriteria</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('soal.index') }}"
+                                class="nav-link {{ Request::is('admin/soal') ? 'active' : '' }}">
+                                <i class="fas fa-list nav-icon"></i>
+                                <p>Master Soal</p>
                             </a>
                         </li>
                     </ul>
@@ -111,9 +118,9 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="#" class="nav-link">
+                            <a href="{{ route('perhitungan.index') }}" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>TBA</p>
+                                <p>Perhitungan SPK</p>
                             </a>
                         </li>
                     </ul>

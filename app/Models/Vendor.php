@@ -20,4 +20,8 @@ class Vendor extends Model
         'created_by',
         'modified_by',
     ];
+
+    public function quisioners(){
+        return $this->hasMany(Quisioner::class ,'id_vendor');
+    }
 }

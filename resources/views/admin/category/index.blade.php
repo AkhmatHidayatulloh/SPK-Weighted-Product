@@ -34,7 +34,7 @@
                         <h3 class="card-title">Category List</h3>
                     </div>
                     <div class="card-body">
-                        <table class="table table-bordered">
+                        <table id="example2" class="table table-bordered table-hover">
                             <thead>
                                 <tr>
                                     <th>ID</th>

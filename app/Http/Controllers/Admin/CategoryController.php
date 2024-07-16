@@ -25,7 +25,13 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'bobot' => 'required|numeric',
+            'benefit' => 'required|numeric',
         ]);
+
+        // dd(
+        //     $request->bobot,
+        //     $request->benefit,
+        // );
 
         Category::create($request->all());
 
@@ -48,6 +54,7 @@ class CategoryController extends Controller
             'name' => 'required|string|max:255',
             'description' => 'required|string',
             'bobot' => 'required|numeric',
+            'benefit' => 'required|numeric',
         ]);
 
         $category->update($request->all());

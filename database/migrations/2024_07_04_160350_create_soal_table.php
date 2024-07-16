@@ -1,0 +1,36 @@
+<?php
+
+use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
+
+return new class extends Migration
+{
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        Schema::create('soal', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('id_categorys')->nullable();
+            $table->foreign('id_categorys')->references('id')->on('categorys')->onDelete('cascade');
+            // $table->foreignId('id_categorys')->constrained('categorys');
+            $table->text('pertanyaan');
+            $table->timestamps();
+            
+        });
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        Schema::dropIfExists('soal');
+    }
+};

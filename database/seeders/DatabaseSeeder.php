@@ -27,6 +27,9 @@ class DatabaseSeeder extends Seeder
             DetailUserSeeder::class,
             VendorSeeder::class,
             CategorySeeder::class,
+            SoalSeeder::class,
+            JawabanSeeder::class,
+            QuisionerSeeder::class,
         ]);
     }
 }

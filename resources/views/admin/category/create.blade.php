@@ -45,6 +45,17 @@
                                 <input type="number" step="0.01" class="form-control" id="bobot" name="bobot"
                                     value="{{ old('bobot') }}" required>
                             </div>
+                            <div class="form-group">
+                                <label for="benefit">Benefit</label>
+                                <select class="form-control" name="benefit" id="benefit">
+                                    <option value="1">
+                                        Iya
+                                    </option>
+                                    <option value="0">
+                                        Tidak
+                                    </option>
+                                </select>
+                            </div>
                             <button type="submit" class="btn btn-primary">Add Category</button>
                         </form>
                     </div>

@@ -48,6 +48,7 @@
     <!-- Datatable -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
 
+    @yield('formwizard')
     <!-- Addtional style -->
     @hasSection('style')
     @yield('style')
@@ -135,6 +136,8 @@
     <script src="{{ asset('admin/plugins/toastr/toastr.min.js')}}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('admin/dist/js/adminlte.min.js')}}"></script>
+
+    @yield('jsformwizard')
 
     @include('admin.components.script.script')
 

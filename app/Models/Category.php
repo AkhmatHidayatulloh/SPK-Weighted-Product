@@ -11,6 +11,14 @@ class Category extends Model
     protected $table = "categorys";
 
     protected $fillable = [
-        'name', 'description', 'bobot'
+        'name', 'description', 'bobot','benefit'
     ];
+
+    public function soals(){
+        return $this->hasMany(Soal::class ,'id_categorys');
+    }
+
+    public function quisioners(){
+        return $this->hasMany(Quisioner::class ,'id_categorys');
+    }
 }
